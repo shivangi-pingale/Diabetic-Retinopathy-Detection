@@ -1,12 +1,13 @@
 # Diabetic Retinopathy Detection using Transfer Learning (ResNet-18)
 
-This project implements an **AI-based system** to detect and classify **Diabetic Retinopathy (DR)** from retinal fundus images. Diabetic Retinopathy is a diabetes complication that can cause blindness if not diagnosed early. Manual detection is time-consuming and error-prone.
+This project implements an **AI-based system** to detect and classify **Diabetic Retinopathy (DR)** from retinal fundus images. DR is a severe complication of diabetes that can lead to blindness if not detected early, and manual screening is both time-consuming and error-prone.
 
 This project automates DR stage classification into five severity levels, supporting clinicians in early diagnosis. It leverages **transfer learning with ResNet-18**, preprocessing, data augmentation, class imbalance handling, and **Grad-CAM** for model interpretability.
 
 ## Project Structure 
 
-Diabetic-Retinopathy-Detection/  
+```text
+Diabetic-Retinopathy-Detection/  # My Google drive folder 
 │── Diabetic-Retinopathy-Detection.ipynb  # Source code
 │── aptos2019-blindness-detection/ # Dataset
 │ ├── test_images/
@@ -22,6 +23,7 @@ Diabetic-Retinopathy-Detection/
 │ ├── 2/
 │ ├── 3/
 │ └── 4/
+```
 
 ## Dataset
 The dataset used is the [APTOS 2019 Blindness Detection](https://www.kaggle.com/competitions/aptos2019-blindness-detection/data) dataset, provided by the Asia Pacific Tele-Ophthalmology Society (APTOS) as part of a Kaggle competition.
@@ -148,7 +150,7 @@ The complete code, training, evaluation, and visualizations are in this Jupyter 
 👉 [Diabetic-Retinopathy-Detection.ipynb](Diabetic-Retinopathy-Detection.ipynb)
 
 You can open it directly in Google Colab:  
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/your-username/diabetic-retinopathy-detection/blob/main/Diabetic-Retinopathy-Detection.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/shivangi-pingale/Diabetic-Retinopathy-Detection/blob/main/Diabetic-Retinopathy-Detection.ipynbb)
 
 ## How to Run
 1. Clone this repo  
