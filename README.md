@@ -87,12 +87,12 @@ Validation images were only resized and normalized (no random augmentation).
 
 ### ResNet-18
    
-ResNet-18 is used because the model is lightweight compared to deeper variants (ResNet-50/101), works well with smaller medical datasets and skip connections prevent vanishing gradients. 
+[ResNet-18](https://en.wikipedia.org/wiki/Residual_neural_network) is used because the model is lightweight compared to deeper variants (ResNet-50/101), works well with smaller medical datasets and skip connections prevent vanishing gradients. 
 
 ### Transfer Learning
 Training a deep CNN from scratch requires millions of images, but medical datasets like APTOS 2019 are relatively small (~3.6k images).  
 To overcome this, we used transfer learning:
-- Start with a **ResNet-18 model pretrained on ImageNet** (1.2M images, 1000 classes). 
+- Start with a **[ResNet-18 model pretrained on ImageNet](https://docs.pytorch.org/vision/main/models/generated/torchvision.models.resnet18.html)** (1.2M images, 1000 classes). 
 - The early convolutional layers reuses already learned general visual features like edges, colors, textures, gradients, object parts and shapes.
 - Replace the final fully connected layer (fc) to with a new one that outputs **5 classes** (DR severity levels).
   ```python
@@ -150,7 +150,7 @@ The complete code, training, evaluation, and visualizations are in this Jupyter 
 👉 [Diabetic-Retinopathy-Detection.ipynb](Diabetic-Retinopathy-Detection.ipynb)
 
 You can open it directly in Google Colab:  
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/shivangi-pingale/Diabetic-Retinopathy-Detection/blob/main/Diabetic-Retinopathy-Detection.ipynbb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/shivangi-pingale/Diabetic-Retinopathy-Detection/blob/main/Diabetic-Retinopathy-Detection.ipynb)
 
 ## How to Run
 1. Clone this repo  
