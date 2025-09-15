@@ -1,16 +1,8 @@
 # Diabetic Retinopathy Detection using Transfer Learning (ResNet-18)
 
-This project implements an **AI-based system** to detect and classify **Diabetic Retinopathy (DR)** from retinal fundus images.  
-It leverages **transfer learning with ResNet-18**, preprocessing, data augmentation, class imbalance handling, and **Grad-CAM** for model interpretability. 
+This project implements an **AI-based system** to detect and classify **Diabetic Retinopathy (DR)** from retinal fundus images. Diabetic Retinopathy is a diabetes complication that can cause blindness if not diagnosed early. Manual detection is time-consuming and error-prone.
 
----
-
-## Introduction
-Diabetic Retinopathy is a diabetes complication that can cause blindness if not diagnosed early. Manual detection is time-consuming and error-prone.  
-This project automates DR stage classification into five severity levels, supporting clinicians in early diagnosis.  
-
----
-
+This project automates DR stage classification into five severity levels, supporting clinicians in early diagnosis. It leverages **transfer learning with ResNet-18**, preprocessing, data augmentation, class imbalance handling, and **Grad-CAM** for model interpretability.
 
 ## Project Structure 
 
@@ -43,9 +35,7 @@ Severity levels (clinician-labeled):
 - **Class 1:** Mild
 - **Class 2:** Moderate
 - **Class 3:** Severe
-- **Class 4:** Proliferative DR  
-
----
+- **Class 4:** Proliferative DR
 
 ## Challenges
 
@@ -56,9 +46,7 @@ This imbalance makes the model biased toward the majority class.
 ![Class Distribution of the Training Dataset](results/ClassDistribution.png)
 
 ### Image Quality Variability
-Fundus images vary in brightness, contrast, and sharpness, making preprocessing essential for effective training.  
-
----
+Fundus images vary in brightness, contrast, and sharpness, making preprocessing essential for effective training.
 
 ## Preprocessing
 
@@ -85,18 +73,13 @@ Fundus images vary in brightness, contrast, and sharpness, making preprocessing 
 |---------|---------|
 | ![Alt text 1](results/0a4e1a29ffff.png) | ![Alt text 2](results/0a4e1a29ffff-preprocessed.png) |
 
-
----
-
 ## Data Augmentation
 To improve generalization and reduce overfitting:  
 - Random Horizontal Flip
 - Random Rotation (±10°) 
 - Normalization using ImageNet mean & std  
 
-Validation images were only resized and normalized (no random augmentation).  
-
----
+Validation images were only resized and normalized (no random augmentation).
 
 ## Model: ResNet-18 with Transfer Learning
 
@@ -116,8 +99,6 @@ To overcome this, we used transfer learning:
 
 This approach makes training faster, reduces the risk of overfitting, and improves performance on small datasets.
 
----
-
 ## Training Strategy
 - **4-Fold Cross Validation** for robust evaluation  
 - Each fold trained independently and results averaged
@@ -133,9 +114,7 @@ This approach makes training faster, reduces the risk of overfitting, and improv
       - Metrics (Accuracy, Precision, Recall, F1, ROC-AUC) are logged.
    - Repeat for epochs (until convergence).
 - Finally, metrics are averaged across all folds to report stable results.  
-- **Grad-CAM** used to visualize attention regions on retinal images  
-
----
+- **Grad-CAM** used to visualize attention regions on retinal images
 
 ## Results
 
@@ -157,16 +136,12 @@ For detailed results and plots, see [full results](results/results.md).
 - **Overall:** The model generalizes well but struggles with minority classes  
 
 ##### Confusion matrix for all folds:  
-![Confusion Matrix](results/k_fold_confusion_matrix.png)  
-
----
+![Confusion Matrix](results/k_fold_confusion_matrix.png)
 
 ## Grad-CAM Visualization
 Grad-CAM highlights regions in fundus images that influenced predictions. This improves interpretability and helps clinicians trust the model.
 
 ![Grad-CAM Class 0](results/class0_gradcam.png)
-
----
 
 ## Notebook
 The complete code, training, evaluation, and visualizations are in this Jupyter Notebook:  
@@ -174,8 +149,6 @@ The complete code, training, evaluation, and visualizations are in this Jupyter 
 
 You can open it directly in Google Colab:  
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/your-username/diabetic-retinopathy-detection/blob/main/Diabetic-Retinopathy-Detection.ipynb)
-
----
 
 ## How to Run
 1. Clone this repo  
